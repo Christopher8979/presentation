@@ -1,0 +1,22 @@
+{
+  "name": "presentation-app",
+  "version": "1.0.0",
+  "description": "App to be used for presentation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christopher8979/presentation.git"
+  },
+  "author": "Christopher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Christopher8979/presentation/issues"
+  },
+  "homepage": "https://github.com/Christopher8979/presentation#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
