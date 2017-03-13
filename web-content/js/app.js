@@ -8,10 +8,14 @@ angular.module('presentation', [])
         return {
             restrict: 'EA',
             replace: true,
-            templateUrl:'../partials/container.html',
-            compile: function(element, attr) {
-                element.addClass('maxed-out');
-                return function() {}
+            templateUrl: '../partials/container.html',
+            compile: function(element, attributes) {
+                return function(scope, elem, attr) {
+                    scope.maxed = true;
+                    scope.toggleScreen = function() {
+                        scope.maxed = !scope.maxed;
+                    };
+                }
             }
         }
     }]);
