@@ -1,11 +1,24 @@
 <div class="wrapper" ng-class="{'maxed-out' : maxed}">
     <div class="slides-holder">
-      <div class="" ng-transclude>
+        <div class="" ng-transclude>
 
-      </div>
+        </div>
     </div>
-    <div class="action-bar">
+    <div class="action-bar clearfix">
         <span class="mini-map" ng-click="toggleScreen()"></span>
-        <span>movearound</span>
+        <div class="move clearfix">
+            <div class="arrow-section">
+                <span class="arrow">L</span>
+            </div>
+            <div class="arrow-section">
+                <div class="up-down">
+                    <span class="arrow">U</span>
+                    <span class="arrow">D</span>
+                </div>
+            </div>
+            <div class="arrow-section">
+                <span class="arrow">R</span>
+            </div>
+        </div>
     </div>
 </div>

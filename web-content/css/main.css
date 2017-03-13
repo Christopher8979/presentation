@@ -12,13 +12,37 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
+    height: 70px;
 }
 
 .wrapper .mini-map {
-    width: 100px;
-    height: 100px;
+    width: 70px;
     background-color: #ccc;
     display: block;
+    float: left;
+    height: 100%;
+}
+
+.wrapper .move {
+    height: 100%;
+    width: 70px;
+    float: left;
+}
+
+.wrapper .move .arrow-section {
+    float: left;
+    width: 33%;
+}
+
+.arrow-section .arrow {
+    height: 35px;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+}
+
+.arrow-section>span {
+    margin-top: 17px;
 }
 
 .wrapper .slides-holder {
@@ -36,6 +60,7 @@ body {
     top: 0;
     left: 0;
 }
+
 
 /*.slides-wrapper {}
 
