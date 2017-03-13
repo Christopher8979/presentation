@@ -1,0 +1,7 @@
+<div class="slides-wrapper clearfix">
+    <div class="slide-stack" ng-repeat="chapter in allSlides track by $index" ng-if="$index === chapterNo">
+        <div class="slide" ng-repeat="slide in chapter track by $index" ng-if="$index === slideNo" ng-click="nextChapter()">
+            {{slide}}
+        </div>
+    </div>
+</div>

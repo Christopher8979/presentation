@@ -36,3 +36,14 @@ body {
     top: 0;
     left: 0;
 }
+
+/*.slides-wrapper {}
+
+.slide-stack, .slide-stack .slide {
+    position: relative;
+    display: none;
+}
+
+.slide-stack.active, .slide-stack.active .slide.active {
+    display: block;
+}*/

@@ -1,8 +1,8 @@
 angular.module('presentation-app', ['presentation'])
     .controller('presentation-app-ctrl', ['$scope', function(scope) {
         scope.allSlides = [
-            ['../chapter1/slide1.html', '../chapter1/slide3.html', '../chapter1/slide3.html'],
-            ['../chapter2/slide1.html', '../chapter2/slide3.html', '../chapter2/slide3.html']
+            ['../chapter1/slide1.html', '../chapter1/slide2.html', '../chapter1/slide3.html'],
+            ['../chapter2/slide1.html', '../chapter2/slide2.html', '../chapter2/slide3.html']
         ]
     }]);
 
@@ -28,13 +28,20 @@ angular.module('presentation', [])
             restrict: 'E',
             replace: true,
             scope: {
-                config: '='
+                allSlides: '=config'
             },
+            templateUrl: '../partials/slides-holder.html',
             link: function(scope, elem, attr) {
-                setTimeout(function() {
-                    console.log(scope);
-                    console.log(attr);
-                }, 5000);
+
+                scope.chapterNo = 0;
+                scope.slideNo = 0;
+
+                scope.nextChapter = function() {
+                    scope.chapterNo++;
+                };
+
+                console.log(scope);
+                console.log(attr);
             }
         }
     }]);
