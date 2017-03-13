@@ -1,6 +1,9 @@
 angular.module('presentation-app', ['presentation'])
-    .controller('mainCtrl', ['$scope', function(scope) {
-        scope.test = 'Initial mark up with angular'
+    .controller('presentation-app-ctrl', ['$scope', function(scope) {
+        scope.allSlides = [
+            ['../chapter1/slide1.html', '../chapter1/slide3.html', '../chapter1/slide3.html'],
+            ['../chapter2/slide1.html', '../chapter2/slide3.html', '../chapter2/slide3.html']
+        ]
     }]);
 
 angular.module('presentation', [])
@@ -8,6 +11,7 @@ angular.module('presentation', [])
         return {
             restrict: 'EA',
             replace: true,
+            transclude: true,
             templateUrl: '../partials/container.html',
             compile: function(element, attributes) {
                 return function(scope, elem, attr) {
@@ -16,6 +20,21 @@ angular.module('presentation', [])
                         scope.maxed = !scope.maxed;
                     };
                 }
+            }
+        }
+    }])
+    .directive('slides', [function() {
+        return {
+            restrict: 'E',
+            replace: true,
+            scope: {
+                config: '='
+            },
+            link: function(scope, elem, attr) {
+                setTimeout(function() {
+                    console.log(scope);
+                    console.log(attr);
+                }, 5000);
             }
         }
     }]);
