@@ -38,10 +38,18 @@ body {
     height: 35px;
     display: block;
     color: #fff;
+    border: none;
+    background: none;
     cursor: pointer;
+    outline: none;
 }
 
-.arrow-section>span {
+.arrow-section .arrow:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.arrow-section>button {
     margin-top: 17px;
 }
 

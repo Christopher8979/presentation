@@ -2,12 +2,15 @@ angular.module('presentation-app', ['presentation'])
     .controller('presentation-app-ctrl', ['$scope', function(scope) {
         scope.allSlides = [
             ['../chapter1/slide1.html', '../chapter1/slide2.html', '../chapter1/slide3.html'],
-            ['../chapter2/slide1.html', '../chapter2/slide2.html', '../chapter2/slide3.html']
+            ['../chapter2/slide1.html', '../chapter2/slide2.html', '../chapter2/slide3.html'],
+            ['../chapter3/slide1.html', '../chapter3/slide2.html', '../chapter3/slide3.html'],
+            ['../chapter4/slide1.html', '../chapter4/slide2.html', '../chapter4/slide3.html'],
+            ['../chapter5/slide1.html', '../chapter5/slide2.html', '../chapter5/slide3.html']
         ]
     }]);
 
 angular.module('presentation', [])
-    .directive('container', [function() {
+    .directive('presentation', [function() {
         return {
             restrict: 'EA',
             scope: {
@@ -84,28 +87,6 @@ angular.module('presentation', [])
             controllerAs: 'container',
             compile: function(element, attributes) {
                 return function(scope, elem, attr) {}
-            }
-        }
-    }])
-    .directive('slides', [function() {
-        return {
-            restrict: 'E',
-            replace: true,
-            scope: {
-                allSlides: '=config'
-            },
-            templateUrl: '../partials/slides-holder.html',
-            link: function(scope, elem, attr) {
-
-                // scope.chapterNo = 0;
-                // scope.slideNo = 0;
-                //
-                // scope.nextChapter = function() {
-                //     scope.chapterNo++;
-                // };
-
-                console.log(scope);
-                console.log(attr);
             }
         }
     }]);
