@@ -1,23 +1,27 @@
-<div class="wrapper" ng-class="{'maxed-out' : maxed}">
+<div class="wrapper" ng-class="{'maxed-out' : container.maxed}" ng-init="container.transformInput()">
     <div class="slides-holder">
-        <div class="" ng-transclude>
-
+        <div class="slides-wrapper clearfix">
+            <div class="slide-stack" ng-repeat="stack in container.slides track by $index" ng-if="$index === container.chapterNo">
+                <div class="slide" ng-repeat="slide in stack.chapter track by $index" ng-if="$index === container.slideNo">
+                    {{slide}}
+                </div>
+            </div>
         </div>
     </div>
     <div class="action-bar clearfix">
-        <span class="mini-map" ng-click="toggleScreen()"></span>
+        <span class="mini-map" ng-click="container.toggleScreen()"></span>
         <div class="move clearfix">
             <div class="arrow-section">
-                <span class="arrow">L</span>
+                <button class="arrow" ng-click="container.prevChapter();container.checkButtonStatus();" ng-disabled="container.buttonStatus.leftDisabled">L</button>
             </div>
             <div class="arrow-section">
                 <div class="up-down">
-                    <span class="arrow">U</span>
-                    <span class="arrow">D</span>
+                    <button class="arrow" ng-click="container.prevSlide();container.checkButtonStatus();" ng-disabled="container.buttonStatus.upDisabled">U</button>
+                    <button class="arrow" ng-click="container.nextSlide();container.checkButtonStatus();" ng-disabled="container.buttonStatus.downDisabled">D</button>
                 </div>
             </div>
             <div class="arrow-section">
-                <span class="arrow">R</span>
+                <button class="arrow" ng-click="container.nextChapter();container.checkButtonStatus();" ng-disabled="container.buttonStatus.rightDisabled">R</button>
             </div>
         </div>
     </div>
